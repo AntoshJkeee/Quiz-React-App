@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Roboto Light';
+    font-weight: 300;
+    src: local('Roboto-Light'), url(../src/assets/fonts/Roboto-Light.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    font-weight: 500;
+    src: local('Roboto-Regular'), url(../src/assets/fonts/Roboto-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    font-weight: 900;
+    src: local('Roboto-Bold'), url(../src/assets/fonts/Roboto-Bold.ttf) format('ttf');
+}
+
+body {
+    font-family: "Roboto Light", "Arial", 'sans-serif';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

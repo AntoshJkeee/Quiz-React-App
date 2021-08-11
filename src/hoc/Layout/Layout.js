@@ -1,12 +1,13 @@
-import classes from './Layout.css'
-
-console.log(classes)
+import classes from './Layout.module.css'
+import Quiz from "../../containers/Quiz/Quiz";
 
 function Layout (props) {
   return (
-      <main>
-        {props.children}
+    <div className={classes.layout}>
+      <main className={classes.main}>
+        <Quiz />
       </main>
+    </div>
   )
 }
 
