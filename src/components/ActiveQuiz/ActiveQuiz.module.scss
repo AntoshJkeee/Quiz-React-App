@@ -3,11 +3,13 @@
 .activeQuiz {
     color: $whiteColor;
     padding: 20px;
-    border: 2px solid #fff;
+    border: 2px solid $whiteColor;
     border-radius: 5px;
-    margin: 0 10px;
 }
 
-.activeQuizItem {
-  font-family: "Roboto Bold", "Arial", 'sans-serif';
+.question {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
 }

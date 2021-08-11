@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/variables.scss";
+
+.activeQuizItem {
+  font-family: "Roboto Bold", "Arial", 'sans-serif';
+  border: 1px solid $whiteColor;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.activeQuizItem:hover {
+  background-color: rgba(255,255,255, .2);
+  transition: background .3s ease-in-out;
+}
