@@ -1,4 +1,4 @@
-import classes from './Quiz.module.css'
+import classes from './Quiz.module.scss'
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 function Quiz () {

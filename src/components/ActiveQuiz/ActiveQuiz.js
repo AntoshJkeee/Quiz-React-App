@@ -1,4 +1,4 @@
-import classes from './ActiveQuiz.module.css'
+import classes from './ActiveQuiz.module.scss'
 
 function ActiveQuiz (props) {
   return (
@@ -10,10 +10,10 @@ function ActiveQuiz (props) {
         </span>
       </p>
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
+        <li className={classes.activeQuizItem}>1</li>
+        <li className={classes.activeQuizItem}>2</li>
+        <li className={classes.activeQuizItem}>3</li>
+        <li className={classes.activeQuizItem}>4</li>
       </ul>
     </div>
   )

@@ -1,0 +1,13 @@
+@import "src/assets/styles/variables.scss";
+
+.activeQuiz {
+    color: $whiteColor;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.activeQuizItem {
+  font-family: "Roboto Bold", "Arial", 'sans-serif';
+}
