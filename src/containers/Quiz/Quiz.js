@@ -1,11 +1,14 @@
 import classes from './Quiz.module.scss'
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 import {useState} from "react";
+import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
 
 function Quiz () {
 
+  let [isFinish, setIsFinish] = useState(false)
   let [activeQuestion, setActiveQuestion] = useState(0)
   let [answerState, setAnswerState] = useState(null)
+  let [results, setResults] = useState({}) // { [id] : 'success' : 'error' }
   let [quiz] = useState([
     {
       question: [
@@ -22,10 +25,10 @@ function Quiz () {
     },
     {
       question: [
-        'Сколько пальцев у человека ?'
+        'Сколько дней в неделе ?'
       ],
       answers: [
-        {text: 'Пять', id: 1},
+        {text: 'Семь', id: 1},
         {text: 'Три', id: 2},
         {text: 'Десять', id: 3},
         {text: 'Один', id: 4},
@@ -35,23 +38,37 @@ function Quiz () {
     },
     {
       question: [
-        'Когда мы съебемся с этой хаты ?'
+        'Когда мы уедем с этой квартиры ?'
       ],
       answers: [
         {text: 'Через месяц', id: 1},
         {text: 'Никогда', id: 2},
         {text: 'Выращу здесь все свое потомство', id: 3},
-        {text: 'Владимир Владимирович Путин', id: 4},
+        {text: 'Когда возьму кредит', id: 4},
       ],
       rightAnswerId: 4,
       id: 3
     },
-
   ])
+
+  function returnNewQuiz() {
+    console.log('update !')
+    setActiveQuestion(0)
+    setIsFinish(false)
+    setResults({})
+  }
 
   function onAnswerClickHandler(answerId) {
 
+    if(answerState) {
+      const key = Object.keys(answerState)[0];
+      if(answerState[key] === 'success') {
+        return
+      }
+    }
+
     const question = quiz[activeQuestion]
+
     if(question.rightAnswerId === answerId) {
 
       setAnswerState({
@@ -61,7 +78,7 @@ function Quiz () {
       let timeout = window.setTimeout(()=> {
         setAnswerState(null)
         if(isQuizFinish()) {
-          console.log('Finish')
+          setIsFinish(true)
         } else {
           setActiveQuestion(prev => {
             return prev + 1
@@ -75,6 +92,13 @@ function Quiz () {
         answerState: {[answerId]: 'error'}
       })
     }
+
+    if (!([activeQuestion] in results)) {
+      setResults(prev => ({
+        ...prev,
+        [activeQuestion]: question.rightAnswerId === answerId
+      }))
+    }
   }
 
   function isQuizFinish() {
@@ -84,15 +108,27 @@ function Quiz () {
   return (
     <div className={classes.quiz}>
       <div className={classes.activeQuizWrapper}>
-        <h1 className={classes.mainText}>Ответьте на все вопросы</h1>
-        <ActiveQuiz
-          answers={quiz[activeQuestion].answers}
-          question={quiz[activeQuestion].question}
-          onAnswerClick={onAnswerClickHandler}
-          answerLength={quiz.length}
-          answerNumber={activeQuestion + 1}
-          state={answerState}
-        />
+        {
+          isFinish
+          ? <FinishedQuiz
+              answerLength={quiz.length}
+              quiz={quiz}
+              updateQuiz={returnNewQuiz}
+              results={results}
+            />
+          :
+            <div>
+              <h1 className={classes.mainText}>Ответьте на все вопросы</h1>
+              <ActiveQuiz
+                answers={quiz[activeQuestion].answers}
+                question={quiz[activeQuestion].question}
+                onAnswerClick={onAnswerClickHandler}
+                answerLength={quiz.length}
+                answerNumber={activeQuestion + 1}
+                state={answerState}
+              />
+            </div>
+        }
       </div>
     </div>
   )

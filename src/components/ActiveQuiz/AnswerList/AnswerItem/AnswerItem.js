@@ -6,7 +6,6 @@ function AnswerItem (props) {
 
   if(props.state) {
     cls.push(classes[props.state])
-    console.log(cls.join(' '))
   }
 
   return (
