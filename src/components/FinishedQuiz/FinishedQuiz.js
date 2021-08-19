@@ -1,8 +1,7 @@
 import classes from './FinishedQuiz.module.scss'
+import Button from "../UI/Button/Button";
 
 const FinishedQuiz = (props) => {
-
-  console.log(props.results)
 
   function totalCounter() {
     let total = 0;
@@ -35,7 +34,9 @@ const FinishedQuiz = (props) => {
         }
       </ul>
       <p>Правильных ответов: <strong className={classes.Bold}>{totalCounter()}</strong> из <strong className={classes.Classic}>{props.answerLength}</strong></p>
-      <button onClick={() => props.updateQuiz()}>Пройти отпрос заново</button>
+      {/*<button onClick={() => props.updateQuiz()}>Пройти отпрос заново</button>*/}
+      <Button onClick={props.updateQuiz} text='Пройти опрос заново' type='primary'/>
+      <Button onClick={()=> console.log('asd')} text='Перейти в список тестов' type='success'/>
     </div>
   );
 };
