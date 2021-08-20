@@ -4,6 +4,7 @@ import classes from './MenuToggle.module.scss'
 const MenuToggle = (props) => {
 
   const cls = [
+    classes.some,
     classes.MenuToggle,
     'fa',
   ]

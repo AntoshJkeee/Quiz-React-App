@@ -7,11 +7,11 @@
   padding: 10px 15px;
   margin-top: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease-in;
 }
 
 .activeQuizItem:hover {
-  background-color: rgba(255,255,255, .2);
-  transition: background .3s ease-in-out;
+  transform: translate(7px);
 }
 
 .success {

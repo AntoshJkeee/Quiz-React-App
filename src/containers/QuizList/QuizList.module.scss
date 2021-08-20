@@ -1,0 +1,39 @@
+@import "../../assets/styles/variables.scss";
+
+.QuizList {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  flex-grow: 1;
+  width: 100%;
+  background: linear-gradient(90deg, #fd8355 0%, #f0576c 37%, #f79cbd 100%);
+
+  .QuizListWrapper {
+    border: 1px solid white;
+    height: fit-content;
+    padding: 20px;
+    max-width: 400px;
+    width: 300px;
+    border-radius: 10px;
+    h1 {
+      color: $whiteColor;
+      text-align: center;
+      font-family: "Roboto Bold", "Arial", 'sans-serif';
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        color: $whiteColor;
+        cursor: pointer;
+        transition: color, transform .5s ease-in;
+        display: block;
+        width: fit-content;
+        &:hover {
+          transform: translate(10px)
+        }
+      }
+    }
+  }
+}

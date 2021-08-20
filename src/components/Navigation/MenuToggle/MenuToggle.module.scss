@@ -6,9 +6,9 @@
   left: 40px;
   font-size: 20px;
   cursor: pointer;
-  color: $whiteColor;
   transition: opacity, left .22s ease-in;
   z-index: 100;
+  color: $whiteColor;
   &:hover {
     opacity: .7;
   }
@@ -16,4 +16,8 @@
 
 .MenuToggle.open {
   left: 280px ;
+}
+
+.some {
+  color: $whiteColor;
 }

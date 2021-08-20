@@ -6,12 +6,11 @@
   color: $whiteColor;
   margin: 0 10px;
   border: 2px solid $whiteColor;
-}
-
-.FinishQuiz p {
-  text-align: center;
-  font-weight: bold;
-  margin: 30px 0;
+  p {
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0;
+  }
 }
 
 .ResultMessage {
@@ -23,23 +22,20 @@
 
 .ResultMessageList {
   margin: 10px 0;
-}
-
-.ResultMessageList li {
-  padding: 5px 10px;
-  border: 1px solid $whiteColor;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.ResultMessageList i {
-  width: 16px;
-  height: 16px;
-  display: flex;
-  justify-content: center;
+  li {
+    padding: 5px 10px;
+    border: 1px solid $whiteColor;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    i {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 .Bold {
@@ -59,4 +55,8 @@
 
 .error {
   color: $errorColor
+}
+
+.Link {
+  text-decoration: none;
 }

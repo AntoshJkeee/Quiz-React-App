@@ -1,5 +1,4 @@
 import classes from './Layout.module.css'
-import Quiz from "../../containers/Quiz/Quiz";
 import MenuToggle from "../../components/Navigation/MenuToggle/MenuToggle";
 import {useState} from "react";
 import Drawer from "../../components/Navigation/Drawer/Drawer";
@@ -24,7 +23,7 @@ function Layout (props) {
         isOpen={menu}
       />
       <main className={classes.main}>
-        <Quiz />
+        {props.children}
       </main>
     </div>
   )

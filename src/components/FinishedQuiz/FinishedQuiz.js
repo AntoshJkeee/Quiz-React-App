@@ -1,5 +1,6 @@
 import classes from './FinishedQuiz.module.scss'
 import Button from "../UI/Button/Button";
+import {Link} from 'react-router-dom'
 
 const FinishedQuiz = (props) => {
 
@@ -36,7 +37,9 @@ const FinishedQuiz = (props) => {
       <p>Правильных ответов: <strong className={classes.Bold}>{totalCounter()}</strong> из <strong className={classes.Classic}>{props.answerLength}</strong></p>
       {/*<button onClick={() => props.updateQuiz()}>Пройти отпрос заново</button>*/}
       <Button onClick={props.updateQuiz} text='Пройти опрос заново' type='primary'/>
-      <Button onClick={()=> console.log('asd')} text='Перейти в список тестов' type='success'/>
+      <Link to='/' className={classes.Link}>
+        <Button onClick={()=> console.log('asd')} text='Перейти в список тестов' type='success'/>
+      </Link>
     </div>
   );
 };
