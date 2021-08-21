@@ -35,11 +35,10 @@ const FinishedQuiz = (props) => {
         }
       </ul>
       <p>Правильных ответов: <strong className={classes.Bold}>{totalCounter()}</strong> из <strong className={classes.Classic}>{props.answerLength}</strong></p>
-      {/*<button onClick={() => props.updateQuiz()}>Пройти отпрос заново</button>*/}
-      <Button onClick={props.updateQuiz} text='Пройти опрос заново' type='primary'/>
       <Link to='/' className={classes.Link}>
         <Button onClick={()=> console.log('asd')} text='Перейти в список тестов' type='success'/>
       </Link>
+      <Button onClick={props.updateQuiz} text='Пройти опрос заново' type='primary'/>
     </div>
   );
 };

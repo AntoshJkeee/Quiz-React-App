@@ -19,17 +19,17 @@
 
 .primary {
   background-color: $whiteColor;
-  color: $mainColor;
+  color: $linksColor;
 }
 
 .error {
   background-color: $errorColor;
-  color: $mainColor;
+  color: $linksColor;
 }
 
 .success {
   background-color: $successColor;
-  color: #221673;
+  color: $linksColor;
   border: 1px solid transparent;
   &:hover {
     border: 1px solid $whiteColor;
