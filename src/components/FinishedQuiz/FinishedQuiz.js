@@ -36,7 +36,7 @@ const FinishedQuiz = (props) => {
       </ul>
       <p>Правильных ответов: <strong className={classes.Bold}>{totalCounter()}</strong> из <strong className={classes.Classic}>{props.answerLength}</strong></p>
       <Link to='/' className={classes.Link}>
-        <Button onClick={()=> console.log('asd')} text='Перейти в список тестов' type='success'/>
+        <Button text='Перейти в список тестов' type='success'/>
       </Link>
       <Button onClick={props.updateQuiz} text='Пройти опрос заново' type='primary'/>
     </div>

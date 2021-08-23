@@ -10,6 +10,7 @@ function validateEmail(email) {
 
 const Auth = () => {
 
+  const [isFormValid, setFormValid] = useState(false)
   const [formControls, setFormControls] = useState({
     email: {
       value: '',
@@ -81,7 +82,15 @@ const Auth = () => {
     control.valid = validateControl(control.value, control.validation)
 
     myformControls[controlName] = control
+
+    let myisFormValid = true
+
+    Object.keys(formControls).forEach(name => {
+      myisFormValid = myformControls[name].valid && myisFormValid
+    })
+
     setFormControls(myformControls)
+    setFormValid(myisFormValid)
   }
 
   function renderInputs() {
@@ -110,8 +119,8 @@ const Auth = () => {
         <form onSubmit={submitHandler} className={classes.AuthForm}>
           {renderInputs()}
           <div>
-            <Button type='success' onClick={loginHandler} >Войти</Button>
-            <Button type='primary' onClick={registerHandler} >Зарегистрироваться</Button>
+            <Button type='success' onClick={loginHandler} disabled={!isFormValid}>Войти</Button>
+            <Button type='primary' onClick={registerHandler} disabled={!isFormValid}>Зарегистрироваться</Button>
           </div>
         </form>
       </div>
